@@ -55,14 +55,14 @@ for (let index = 0; index < choices.length; index++) {
       // if user click on the correct answer
       if(choice.isAnswer){
         // give feedback correct
-
+           
 
 
       }else{
         // if user click on the wrong answer
         // deduct 10 sec away from timer
         timeRemaining = timeRemaining - 10;
-
+        
         // show feedback -- wrong
 
       }
@@ -104,7 +104,7 @@ startGameButton.addEventListener('click', function(event){
   // show the question
   sectionQuestion.classList.remove('hide');
   // hide the landing
-  sectionLanding.classList.add('hide');
+  sectionWelcome.classList.add('hide');
   
   renderQuestion(0);
 
@@ -143,4 +143,33 @@ function startTimer(){
     }
   }, 1000);
 
-}
+}// end game
+
+// render the highscore in the dom
+
+// user type in initials in the input box
+
+
+// user hit enter key 
+// get the user initials & highscore
+// save
+
+// if user didnt type in anything in the input box
+// do not save, show an error message in the dom
+
+// user click on the save button
+// get the user initials & highscore
+// save
+
+
+// once we save
+// go to the highscore page
+
+
+
+
+// highscore page
+// generate the highscore list
+
+// if user clicked on the back to home button
+// go back to the landing page
