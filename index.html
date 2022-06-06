@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Code Quiz</title>
+</head>
+<body>
+ <!-- Timer -->
+ <section id="section-timer" class="hide">
+    Current Time is <h3 id="timer">60</h3>
+  </section>
+
+    <!--Start game button-->
+    <section id="section-welcome">
+        <h1>Start the  Quiz</h1>
+        <p>Good Luck!</p>
+        <button id="start-game">Start The Java Script Quiz</button>
+    </section>
+    
+    <!--Question Section-->
+    <section id="section-question" class="hide" >
+
+        <!-- title -->
+        <h1 id="question-title">Which operator is used to assign a value to a variable</h1>
+    
+        <!-- choices -->
+        <ul id="question-choices">
+          <li><button class="question-choice">-</button></li>
+          <li><button class="question-choice">*</button></li>
+          <li><button class="question-choice">=</button></li>
+        </ul>
+    
+      </section>
+
+    <section id="section-endgame" class="hide">
+        <h1>Game Over!</h1>
+        <p>Your score is: <span id="result-span">10</span></p>
+        <!-- form to enter initials -->
+        <!-- button to save the initials -->
+        <form id="form-initials">
+          <input type="text" placeholder="initials here" id="input-initials">
+          <button type="submit">Save</button>
+        </form> 
+    </section>
+
+    <!-- all the high scores page -->
+<section id="section-highscore" class="hide">
+    <h1>Highscores</h1>
+
+    <ul>
+      <li class="highscore-items">Nav - 25</li>
+      <li class="highscore-items">Alexa - 20</li>
+      <li class="highscore-items">Twinkle - 25</li>
+    </ul>
+
+    <button id="button-home">Back to home</button>
+  </section>
+
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
