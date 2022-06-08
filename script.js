@@ -123,6 +123,7 @@ function endGame(){
   // stop the timer
   clearInterval(timerId);
   //console.log('timer stopped');
+  document.querySelector('#result-span').textContent = timeRemaining
 }
 
 function startTimer(){
