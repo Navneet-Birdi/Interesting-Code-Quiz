@@ -106,7 +106,7 @@ startGameButton.addEventListener('click', function(event){
   sectionQuestion.classList.remove('hide');
   // hide the landing
   sectionWelcome.classList.add('hide');
-  
+
   renderQuestion(0);
 
 })
@@ -124,6 +124,7 @@ function endGame(){
   clearInterval(timerId);
   //console.log('timer stopped');
   document.querySelector('#result-span').textContent = timeRemaining
+  document.querySelector('#section-highscore').classList.remove('hide')
 }
 
 function startTimer(){
@@ -142,7 +143,7 @@ function startTimer(){
 
       // end game 
       endGame();
-
+   
     }
   }, 1000);
 
@@ -184,38 +185,45 @@ const saveButton = document.getElementById("save");
 const msgDiv = document.getElementById("msg");
 const userInitialSpan = document.getElementById("user-initial");
 renderinitial();
+
 function displayMessage(type, message) {
     msgDiv.textContent = message;
     msgDiv.setAttribute("class", type);
   }
   
   function renderinitial() {
-    const initial = localStorage.getItem("input-initial");
   
-    if (!initial) {
-      return;
+  
+    const initial = JSON.parse(localStorage.getItem("initial"))
+
+    console.log(initial);
+
+    if (! initial) {
+        return;
     }
+
+    document.querySelector('.highScoresList').innerHTML = `<li class="highscore-items">${initial.initial} - ${initial.score}</li>`
+
+}
   
-    userInitialSpan.textContent = initial;
-    
-  }
-  
-  saveButton.addEventListener("click", function(event) {
+  saveButton.addEventListener("click", function (event) {
     event.preventDefault();
-  
-   const initial = document.querySelector("#input-initial").value;
-    
+
+    const initial = document.querySelector("#input-initials").value;
+
     if (initial === "") {
-      displayMessage("error", "Initial cannot be blank");
-    } 
-    else {
-      displayMessage("success", "All Done");
-  
-      localStorage.setItem("initial", initial);
-     
-      renderinitial();
+        displayMessage("error", "Initial cannot be blank");
+    } else {
+        displayMessage("success", "All Done");
+
+        let scores = {
+          score : timeRemaining,
+          initial : initial
+        }
+
+        localStorage.setItem("initial", JSON.stringify(scores));
+
+        renderinitial();
     }
-  });
-
-
+});
 
