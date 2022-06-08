@@ -178,10 +178,10 @@ function startTimer(){
 // if user clicked on the back to home button
 // go back to the landing page
 
-const initialInput = document.getElementById("#input-initials");
-const saveButton = document.getElementById("#save");
-const msgDiv = document.getElementById("#msg");
-const userInitialSpan = document.getElementById("#user-initial");
+const initialInput = document.getElementById("input-initials");
+const saveButton = document.getElementById("save");
+const msgDiv = document.getElementById("msg");
+const userInitialSpan = document.getElementById("user-initial");
 renderinitial();
 function displayMessage(type, message) {
     msgDiv.textContent = message;
