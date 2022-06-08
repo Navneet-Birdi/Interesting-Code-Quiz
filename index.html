@@ -24,26 +24,33 @@
     <section id="section-question" class="hide" >
 
         <!-- title -->
-        <h1 id="question-title">Which operator is used to assign a value to a variable</h1>
+        <h1 id="question-title"></h1>
     
         <!-- choices -->
         <ul id="question-choices">
-          <li><button class="question-choice">-</button></li>
-          <li><button class="question-choice">*</button></li>
-          <li><button class="question-choice">=</button></li>
+          <li><button class="question-choice"></button></li>
+          <li><button class="question-choice"></button></li>
+          <li><button class="question-choice"></button></li>
         </ul>
-    
+        
       </section>
 
-    <section id="section-endgame" class="hide">
+
+    <section id="section-end-game" class="hide">
         <h1>Game Over!</h1>
-        <p>Your score is: <span id="result-span">10</span></p>
+        <p>Your score is: <span id="result-span"></span></p>
         <!-- form to enter initials -->
         <!-- button to save the initials -->
-        <form id="form-initials">
+        <form id="form-initials" method="post">
+            <label for="initial">Please Enter Your Initials</label>
           <input type="text" placeholder="initials here" id="input-initials">
-          <button type="submit">Save</button>
+          <div id="msg"></div>
+          <button type="submit" id="save">Save</button>
         </form> 
+    </section>
+    <section class="endResult">
+        <h2>Your Result Is:</h2>
+        <p><strong>Initial:</strong> <span id="user-initial"></span></p>
     </section>
 
     <!-- all the high scores page -->

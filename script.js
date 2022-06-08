@@ -1,3 +1,4 @@
+//select each section by id and assigning value to a variable
 //start game
 const startGameButton = document.getElementById('start-game');
 
@@ -21,7 +22,7 @@ const questionChoices = document.getElementById('question-choices');
 
 
 let timeRemaining = 60;
-let timerId;
+var timerId;
 
 function renderQuestion(questionIndex){
 
@@ -55,7 +56,7 @@ for (let index = 0; index < choices.length; index++) {
       // if user click on the correct answer
       if(choice.isAnswer){
         // give feedback correct
-           
+       
 
 
       }else{
@@ -64,7 +65,7 @@ for (let index = 0; index < choices.length; index++) {
         timeRemaining = timeRemaining - 10;
         
         // show feedback -- wrong
-
+        alert("Incorrect Answer!");
       }
       // if user click on the choice of the final question
       const nextQuestionIndex = questionIndex + 1;
@@ -121,6 +122,7 @@ function endGame(){
 
   // stop the timer
   clearInterval(timerId);
+  //console.log('timer stopped');
 }
 
 function startTimer(){
@@ -143,7 +145,7 @@ function startTimer(){
     }
   }, 1000);
 
-}// end game
+}
 
 // render the highscore in the dom
 
@@ -152,9 +154,11 @@ function startTimer(){
 
 // user hit enter key 
 // get the user initials & highscore
+
 // save
 
 // if user didnt type in anything in the input box
+
 // do not save, show an error message in the dom
 
 // user click on the save button
@@ -173,3 +177,44 @@ function startTimer(){
 
 // if user clicked on the back to home button
 // go back to the landing page
+
+const initialInput = document.getElementById("#input-initials");
+const saveButton = document.getElementById("#save");
+const msgDiv = document.getElementById("#msg");
+const userInitialSpan = document.getElementById("#user-initial");
+renderinitial();
+function displayMessage(type, message) {
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+  }
+  
+  function renderinitial() {
+    const initial = localStorage.getItem("input-initial");
+  
+    if (!initial) {
+      return;
+    }
+  
+    userInitialSpan.textContent = initial;
+    
+  }
+  
+  saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
+  
+   const initial = document.querySelector("#input-initial").value;
+    
+    if (initial === "") {
+      displayMessage("error", "Initial cannot be blank");
+    } 
+    else {
+      displayMessage("success", "All Done");
+  
+      localStorage.setItem("initial", initial);
+     
+      renderinitial();
+    }
+  });
+
+
+
