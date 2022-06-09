@@ -134,4 +134,3 @@ function displayMessage(type, message) {
         renderinitial();
     }
 });
-
