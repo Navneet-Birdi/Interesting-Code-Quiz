@@ -43,20 +43,14 @@ for (let index = 0; index < choices.length; index++) {
     button.setAttribute('class', 'question-choice');
     button.textContent = choice.title;
     button.addEventListener('click', function(event){
-    // if user click on the correct answer
+   
       if(choice.isAnswer){
-        // give feedback correct
-       }else{
-        // if user click on the wrong answer
-        // deduct 10 sec away from timer
+      }else{
         timeRemaining = timeRemaining - 10;
         alert("Incorrect Answer!");
       }
-      // if user click on the choice of the final question
       const nextQuestionIndex = questionIndex + 1;
-
       if(nextQuestionIndex >= questions.length){
-        // end game
         return endGame()
       }
      // move on to the next question
@@ -82,7 +76,6 @@ startGameButton.addEventListener('click', function(event){
 })
 
 function endGame(){
-  
   sectionEndGame.classList.remove('hide');
   sectionQuestion.classList.add('hide');
   sectionTimer.classList.add('hide');
@@ -110,8 +103,6 @@ const initialInput = document.getElementById("input-initials");
 const saveButton = document.getElementById("save");
 const msgDiv = document.getElementById("msg");
 const userInitialSpan = document.getElementById("user-initial");
-//renderinitial();
-
 function displayMessage(type, message) {
     msgDiv.textContent = message;
     msgDiv.setAttribute("class", type);
