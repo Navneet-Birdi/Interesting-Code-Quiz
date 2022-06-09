@@ -184,7 +184,7 @@ const initialInput = document.getElementById("input-initials");
 const saveButton = document.getElementById("save");
 const msgDiv = document.getElementById("msg");
 const userInitialSpan = document.getElementById("user-initial");
-renderinitial();
+//renderinitial();
 
 function displayMessage(type, message) {
     msgDiv.textContent = message;
@@ -205,7 +205,7 @@ function displayMessage(type, message) {
     document.querySelector('.highScoresList').innerHTML = `<li class="highscore-items">${initial.initial} - ${initial.score}</li>`
 
 }
-  
+  //save initials
   saveButton.addEventListener("click", function (event) {
     event.preventDefault();
    
@@ -214,16 +214,18 @@ function displayMessage(type, message) {
     if (initial === "") {
         displayMessage("error", "Initial cannot be blank");
     } else {
+      var highscores = JSON.parse(localStorage.getItem("initial")) || [];
+
         displayMessage("success", "All Done");
         document.querySelector('#section-highscore').classList.remove('hide')
         let scores = {
           score : timeRemaining,
           initial : initial
         }
+        highscores.push(scores)
 
-        localStorage.setItem("initial", JSON.stringify(scores));
+        localStorage.setItem("initial", JSON.stringify(highscores));
 
         renderinitial();
     }
 });
-
