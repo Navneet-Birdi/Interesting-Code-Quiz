@@ -21,3 +21,6 @@ li{
     padding-left: 10px;
     padding-right: 10px;
   }
+#button-home, #save {
+    height:25px;
+}
