@@ -79,7 +79,6 @@ startGameButton.addEventListener('click', function(event){
   // hide the landing
   sectionWelcome.classList.add('hide');
   renderQuestion(0);
-
 })
 
 function endGame(){
