@@ -1,6 +1,6 @@
 const questions = [
     {
-      title: "Inside which element do we put JavaScript",
+      title: "Inside which element do we put JavaScript?",
       choices: [
         {
           title: "<scripting>",

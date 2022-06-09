@@ -124,7 +124,7 @@ function endGame(){
   clearInterval(timerId);
   //console.log('timer stopped');
   document.querySelector('#result-span').textContent = timeRemaining
-  document.querySelector('#section-highscore').classList.remove('hide')
+  
 }
 
 function startTimer(){
@@ -208,14 +208,14 @@ function displayMessage(type, message) {
   
   saveButton.addEventListener("click", function (event) {
     event.preventDefault();
-
+   
     const initial = document.querySelector("#input-initials").value;
 
     if (initial === "") {
         displayMessage("error", "Initial cannot be blank");
     } else {
         displayMessage("success", "All Done");
-
+        document.querySelector('#section-highscore').classList.remove('hide')
         let scores = {
           score : timeRemaining,
           initial : initial
