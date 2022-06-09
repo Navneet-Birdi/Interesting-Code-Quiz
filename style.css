@@ -1,9 +1,17 @@
 .hide{
     display: none;
 }
+body{
+    text-align: center;
+    margin-top: 100px;
+}
 
 .question-choice{
 height:40px;
 width:180px;
 margin:5px;
+}
+
+li{
+    list-style-type: none;
 }
