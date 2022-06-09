@@ -10,18 +10,23 @@
 </head>
 <body>
  <!-- Timer -->
+ <nav>
  <section id="section-timer" class="hide">
-    Current Time is <h3 id="timer">60</h3>
+    <h1>Current Time is <h3 id="timer">60</h3></h1>
   </section>
-
+</nav>
     <!--Start game button-->
-    <nav class="toptext">
+  
     <section id="section-welcome">
-        <h1>Start the  Quiz</h1>
-        <p>Good Luck!</p>
+        <h1>Coding Quiz Challenge</h1>
+        <h4>Try to answer the following javascript code related questions within a time interval.</h4>
+        <p>There are Five questions in total and time is 60 seconds.
+            Any question answered wrong will deduct 10 seconds from given time.
+        </p>
+        <h2>Good Luck!</h2>
         <button id="start-game">Start The Java Script Quiz</button>
     </section>
-    </nav>
+   
     <!--Question Section-->
     <section id="section-question" class="hide" >
 
@@ -44,21 +49,22 @@
         <!-- form to enter initials -->
         <!-- button to save the initials -->
         <form id="form-initials" method="post">
-            <label for="initial">Please Enter Your Initials</label>
-          <input type="text" placeholder="initials here" id="input-initials">
-          <div id="msg"></div>
+            <label for="initial">Please Enter Your Initials </label>
+          <input type="text" placeholder="initials here" id="input-initials"><br/>
+          <div id="msg"></div><br/>
           <button id="save">Save</button>
         </form> 
     </section>
     <section id = "end-result" class="hide">
         <h2>Your Result Is:</h2>
-        <p><strong>Initial:</strong> <span id="user-initial"></span></p>
+    <p><strong>Initial:</strong> <span id="user-initial"></span></p>
+      
     </section>
 
     <!-- all the high scores page -->
 <section id="section-highscore" class="hide">
     <h1>Highscores</h1>
-
+   
     <ul class="highScoresList">
       <li class="highscore-items"></li>
       <li class="highscore-items"></li>

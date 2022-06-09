@@ -227,7 +227,3 @@ function displayMessage(type, message) {
     }
 });
 
-document.getElementById("button-home").onclick = function(){
-windows.location('section-welcome');
-displayMessage("Welcome to JavaScript Quiz");
-}
