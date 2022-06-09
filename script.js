@@ -191,7 +191,7 @@ function displayMessage(type, message) {
     msgDiv.setAttribute("class", type);
   }
   
-  function renderinitial() {
+ function renderinitial() {
   
   
     const initial = JSON.parse(localStorage.getItem("initial"))
@@ -227,3 +227,7 @@ function displayMessage(type, message) {
     }
 });
 
+document.getElementById("button-home").onclick = function(){
+windows.location('section-welcome');
+displayMessage("Welcome to JavaScript Quiz");
+}

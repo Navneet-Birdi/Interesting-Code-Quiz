@@ -1,3 +1,9 @@
 .hide{
     display: none;
 }
+
+.question-choice{
+height:40px;
+width:180px;
+margin:5px;
+}
