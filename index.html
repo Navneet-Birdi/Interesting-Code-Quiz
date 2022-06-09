@@ -8,14 +8,13 @@
     <title>JavaScript Code Quiz</title>
 </head>
 <body>
- <!-- Timer -->
-
-  <section id="section-timer" class="hide">
-    <h1>Current Time is <h3 id="timer">60</h3></h1>
-  </section>
+ 
+    <!-- Timer -->
+    <section id="section-timer" class="hide">
+        <h1>Current Time is <h3 id="timer">60</h3></h1>
+    </section>
 
     <!--Start game button-->
-  
     <section id="section-welcome">
         <h1>Coding Quiz Challenge</h1>
         <h4>Try to answer the following javascript code related questions within a time interval.</h4>
@@ -28,32 +27,31 @@
    
     <!--Question Section-->
     <section id="section-question" class="hide" >
-
-        <!-- title -->
+         <!-- title -->
         <h1 id="question-title"></h1>
-    
-        <!-- choices -->
+         <!-- choices -->
         <ul id="question-choices">
           <li><button class="question-choice"></button></li>
           <li><button class="question-choice"></button></li>
           <li><button class="question-choice"></button></li>
         </ul>
-        
-      </section>
+    </section>
 
-
+    <!--End page***** Game over****Initials****Score-->
     <section id="section-end-game" class="hide">
         <h1>Game Over!</h1>
         <p>Your score is: <span id="result-span"></span></p>
         <!-- form to enter initials -->
-        <!-- button to save the initials -->
         <form id="form-initials" method="post">
             <label for="initial">Please Enter Your Initials </label>
-          <input type="text" placeholder="initials here" id="input-initials"><br/><br/>
-          <div id="msg"></div><br/>
-          <button id="save">Save</button>
+            <input type="text" placeholder="initials here" id="input-initials"><br/><br/>
+            <div id="msg"></div><br/>
+            <!-- button to save the initials -->
+            <button id="save">Save</button>
         </form> 
     </section>
+
+
     <section id = "end-result" class="hide">
         <h2>Your Result Is:</h2>
     <p><strong>Initial:</strong> <span id="user-initial"></span></p>
@@ -61,22 +59,19 @@
     </section>
 
     <!-- all the high scores page -->
-<section id="section-highscore" class="hide">
-    <h1>Highscores</h1>
-   
-    <ul class="highScoresList">
-      <li class="highscore-items"></li>
-      <li class="highscore-items"></li>
-      <li class="highscore-items"></li>
-    </ul>
-
-    <a href="./index.html">
-    <button id="button-home">Back to home</button>
-</a>
-  </section>
-
-
-  <script src="questions.js"></script>
-  <script src="script.js"></script>
+    <section id="section-highscore" class="hide">
+        <h1>Highscores</h1>
+        <ul class="highScoresList">
+            <li class="highscore-items"></li>
+            <li class="highscore-items"></li>
+            <li class="highscore-items"></li>
+        </ul>
+        <!--link to home page-->
+        <a href="./index.html">
+            <button id="button-home">Back to home</button>
+        </a>
+    </section>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

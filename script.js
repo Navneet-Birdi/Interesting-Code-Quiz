@@ -38,33 +38,18 @@ questionChoices.textContent = "";
 
 for (let index = 0; index < choices.length; index++) {
     const choice = choices[index];
-
     const li = document.createElement('li');
-
     const button = document.createElement('button');
-
-
-
     button.setAttribute('class', 'question-choice');
     button.textContent = choice.title;
-
-
     button.addEventListener('click', function(event){
-      // question
-      // user click on choice
-
-      // if user click on the correct answer
+    // if user click on the correct answer
       if(choice.isAnswer){
         // give feedback correct
-       
-
-
-      }else{
+       }else{
         // if user click on the wrong answer
         // deduct 10 sec away from timer
         timeRemaining = timeRemaining - 10;
-        
-        // show feedback -- wrong
         alert("Incorrect Answer!");
       }
       // if user click on the choice of the final question
@@ -74,28 +59,15 @@ for (let index = 0; index < choices.length; index++) {
         // end game
         return endGame()
       }
-
-
-      // move on to the next question
+     // move on to the next question
       renderQuestion(nextQuestionIndex);
-      
-
-
+    
     });
-
-
     li.appendChild(button);
-
     questionChoices.append(li);
   }
 
-
-
 }
-
-
-
-
 
 // when i click on the start button
 startGameButton.addEventListener('click', function(event){
@@ -106,80 +78,35 @@ startGameButton.addEventListener('click', function(event){
   sectionQuestion.classList.remove('hide');
   // hide the landing
   sectionWelcome.classList.add('hide');
-
   renderQuestion(0);
 
 })
 
 function endGame(){
-  // (show the end game screen)
+  
   sectionEndGame.classList.remove('hide');
-  // hide question section
   sectionQuestion.classList.add('hide');
-
-  // hide timer
   sectionTimer.classList.add('hide');
-
-  // stop the timer
   clearInterval(timerId);
-  //console.log('timer stopped');
   document.querySelector('#result-span').textContent = timeRemaining;
   
 }
 
 function startTimer(){
-  // timer
-  // show the timer
   sectionTimer.classList.remove('hide');
-  // once the timer starts
   timerId = setInterval(function(){
-    // we will subtract 1 from the current timer count
     timeRemaining = timeRemaining - 1;
-    // and update the dom for every passing sec
     timerEl.textContent = timeRemaining;
-
-    // if timer expires while the game is not completed yet
     if (timeRemaining <= 0){
-
-      // end game 
+     // end game 
       endGame();
-   
     }
   }, 1000);
 
 }
 
-// render the highscore in the dom
 
-// user type in initials in the input box
-
-
-// user hit enter key 
-// get the user initials & highscore
-
-// save
-
-// if user didnt type in anything in the input box
-
-// do not save, show an error message in the dom
-
-// user click on the save button
-// get the user initials & highscore
-// save
-
-
-// once we save
-// go to the highscore page
-
-
-
-
-// highscore page
-// generate the highscore list
-
-// if user clicked on the back to home button
-// go back to the landing page
-
+//input-initials
 const initialInput = document.getElementById("input-initials");
 const saveButton = document.getElementById("save");
 const msgDiv = document.getElementById("msg");
@@ -192,40 +119,29 @@ function displayMessage(type, message) {
   }
   
  function renderinitial() {
-  
-  
-    const initial = JSON.parse(localStorage.getItem("initial"))
-
-    console.log(initial);
-
-    if (! initial) {
+  const initial = JSON.parse(localStorage.getItem("initial"))
+  console.log(initial);
+  if (! initial) {
         return;
     }
-
-    document.querySelector('.highScoresList').innerHTML = `<li class="highscore-items">${initial.initial} - ${initial.score}</li>`
-
+   document.querySelector('.highScoresList').innerHTML = `<li class="highscore-items">${initial.initial} - ${initial.score}</li>`
 }
-  //save initials
+ 
+//save initials
   saveButton.addEventListener("click", function (event) {
     event.preventDefault();
-   
     const initial = document.querySelector("#input-initials").value;
-
     if (initial === "") {
         displayMessage("error", "Initial cannot be blank");
     } else {
-      var highscores = JSON.parse(localStorage.getItem("initial")) || [];
-
         displayMessage("success", "All Done");
         document.querySelector('#section-highscore').classList.remove('hide')
         let scores = {
           score : timeRemaining,
           initial : initial
         }
-        highscores.push(scores)
-
-        localStorage.setItem("initial", JSON.stringify(highscores));
-
+        localStorage.setItem("initial", JSON.stringify(scores));
         renderinitial();
     }
 });
+
