@@ -1,3 +1,4 @@
+
 # 04 Web APIs: Code Quiz
 
 ## User Story
@@ -31,6 +32,4 @@ After answering all the questions this app will ask you to enter you initials an
 But if you try to save scores before entering initials it will show an error message to enter your initials first.
 If you want to try again this code quiz you can click on back to home button.
 
-To do a Code Quiz-
-please click here - 
-
+To try this code quiz, please click here
