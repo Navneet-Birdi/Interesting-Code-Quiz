@@ -30,3 +30,7 @@ It means if you answered any question wrong then ten seconds will be deducted fr
 After answering all the questions this app will ask you to enter you initials and then you can save your score which will be displayed on screen.
 But if you try to save scores before entering initials it will show an error message to enter your initials first.
 If you want to try again this code quiz you can click on back to home button.
+
+To do a Code Quiz-
+please click here - 
+
