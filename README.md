@@ -1,3 +1,4 @@
+
 # 04 Web APIs: Code Quiz
 
 ## User Story
@@ -30,3 +31,13 @@ It means if you answered any question wrong then ten seconds will be deducted fr
 After answering all the questions this app will ask you to enter you initials and then you can save your score which will be displayed on screen.
 But if you try to save scores before entering initials it will show an error message to enter your initials first.
 If you want to try again this code quiz you can click on back to home button.
+
+
+
+![code1](https://user-images.githubusercontent.com/103732777/173169696-62ca51ac-b04a-4b4b-bc4b-c8396bb81830.png)
+![code2](https://user-images.githubusercontent.com/103732777/173169699-49047d7c-4384-4a9c-acd2-af121439bbe5.png)
+![code3](https://user-images.githubusercontent.com/103732777/173169701-44fd8154-ef83-4687-b399-db9dab64dc94.png)
+![code4](https://user-images.githubusercontent.com/103732777/173169702-b912d192-7257-4ed0-95a6-ee2ddb507375.png)
+![code5](https://user-images.githubusercontent.com/103732777/173169704-969f709e-e92e-49ac-ac59-12f5a72bc15b.png)
+
+
