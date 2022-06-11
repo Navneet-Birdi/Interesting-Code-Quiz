@@ -45,6 +45,7 @@ for (let index = 0; index < choices.length; index++) {
     button.addEventListener('click', function(event){
    
       if(choice.isAnswer){
+        
       }else{
         timeRemaining = timeRemaining - 10;
         alert("Incorrect Answer!");
@@ -108,7 +109,8 @@ function displayMessage(type, message) {
     msgDiv.setAttribute("class", type);
   }
   
- function renderinitial() {
+ function renderinitial() 
+ {
   const initial = JSON.parse(localStorage.getItem("initial"))
   console.log(initial);
   if (! initial) {
@@ -118,7 +120,26 @@ function displayMessage(type, message) {
 }
  
 //save initials
-  saveButton.addEventListener("click", function (event) {
+  //saveButton.addEventListener("click", function (event) {
+    //event.preventDefault();
+    //const initial = document.querySelector("#input-initials").value;
+    //if (initial === "") {
+        //displayMessage("error", "Initial cannot be blank");
+    //} else {
+        //displayMessage("success", "All Done");
+       // document.querySelector('#section-highscore').classList.remove('hide')
+       // let scores = {
+         // score : timeRemaining,
+         // initial : initial
+        //}
+        
+        //localStorage.setItem("initial", JSON.stringify(scores));
+        
+        //renderinitial();
+    //}
+//});
+//save initials
+saveButton.addEventListener("click", function (event) {
     event.preventDefault();
     const initial = document.querySelector("#input-initials").value;
     if (initial === "") {
@@ -130,7 +151,13 @@ function displayMessage(type, message) {
           score : timeRemaining,
           initial : initial
         }
-        localStorage.setItem("initial", JSON.stringify(scores));
+        const arr = JSON.parse(localStorage.getItem("initial")) || [];
+        arr.push(scores);
+        console.log(arr);
+        localStorage.setItem("initial", JSON.stringify(arr));
+        
+        //localStorage.setItem("initial", JSON.stringify(scores));
+        
         renderinitial();
     }
 });
